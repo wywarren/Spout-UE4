@@ -332,6 +332,10 @@ bool USpoutBPFunctionLibrary::CreateRegisterSender(FName spoutName, ID3D11Textur
 	const auto tmp = spoutName.GetPlainNameString();
 	UE_LOG(SpoutLog, Warning, TEXT("Created Sender: name --> %s"), *tmp);
 
+<<<<<<< HEAD
+	//
+=======
+>>>>>>> cea7281c5e9b1eea81e4654a0a4e76701ab9a78c
 	senderResult = sender->CreateSender(TCHAR_TO_ANSI(*spoutName.ToString()), desc.Width, desc.Height, sharedSendingHandle, texFormat);
 	UE_LOG(SpoutLog, Warning, TEXT("Created sender DX11 with sender name : %s"), *tmp);
 
@@ -366,7 +370,12 @@ ESpoutState CheckSenderState(FName spoutName){
 
 	ESpoutState state = ESpoutState::noEnoR;
 
+<<<<<<< HEAD
 	if (sender->FindSenderName(TCHAR_TO_ANSI(*spoutName.ToString()))) {
+=======
+		if (sender->FindSenderName(TCHAR_TO_ANSI(*spoutName.ToString()))) {
+	
+>>>>>>> cea7281c5e9b1eea81e4654a0a4e76701ab9a78c
 		//UE_LOG(SpoutLog, Warning, TEXT("Sender State: --> Exist"));
 		if (bIsInListSenders) {
 			//UE_LOG(SpoutLog, Warning, TEXT("Sender State: --> Exist y Registred"));
@@ -487,6 +496,10 @@ bool USpoutBPFunctionLibrary::SpoutSender(FName spoutName, ESpoutSendTextureFrom
 	baseTexture->GetDesc(&td);
 
 	result = sender->UpdateSender(TCHAR_TO_ANSI(*spoutName.ToString()), td.Width, td.Height, targetHandle);
+<<<<<<< HEAD
+
+=======
+>>>>>>> cea7281c5e9b1eea81e4654a0a4e76701ab9a78c
 	return result;
 }
 
@@ -632,7 +645,12 @@ void USpoutBPFunctionLibrary::CloseSender(FName spoutName)
 			UE_LOG(SpoutLog, Warning, TEXT("Releasing sender %s"), *spoutName.GetPlainNameString());
 			// here really release the sender
 			sender->ReleaseSenderName(TCHAR_TO_ANSI(*spoutName.ToString()));
+<<<<<<< HEAD
 			UE_LOG(SpoutLog, Warning, TEXT("Sender %s released"), *spoutName.GetPlainNameString());
+=======
+			
+			UE_LOG(SpoutLog, Warning, TEXT("sender %s released"), *spoutName.GetPlainNameString());
+>>>>>>> cea7281c5e9b1eea81e4654a0a4e76701ab9a78c
 			
 		}
 		else {
